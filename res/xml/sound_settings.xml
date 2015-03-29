@@ -244,6 +244,11 @@
         android:summary="%s"
         android:order="-10"/>
 
+    <!-- Screenshot sound -->
+    <SwitchPreference
+        android:key="screenshot_shutter_sound"
+        android:title="@string/screenshot_shutter_sound_title" />
+
     <com.banana.support.preferences.SystemSettingSwitchPreference
         android:key="show_app_volume"
         android:title="@string/app_volume_title"
