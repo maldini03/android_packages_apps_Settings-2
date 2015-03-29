@@ -57,4 +57,7 @@
     <string name="double_tap_sleep_lockscreen_title">Double tap on lockscreen</string>
     <string name="double_tap_sleep_lockscreen_summary">Double tap anywhere on the lockscreen to put phone to sleep</string>
 
+    <!-- Screenshot shutter -->
+    <string name="screenshot_shutter_sound_title">Screenshot sound</string>
+
 </resources>
