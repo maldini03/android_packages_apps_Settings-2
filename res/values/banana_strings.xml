@@ -85,4 +85,7 @@
     <string name="fingerprint_wake_unlock_title">Touch fingerprint to unlock</string>
     <string name="fingerprint_wake_unlock_touch">Listens for events while the screen is off</string>
     <string name="fingerprint_wake_unlock_press">Only listens for events once the screen is on</string>
+
+    <!-- App details: open play store link if app is user installed -->
+    <string name="app_play_store">Play Store</string>
 </resources>
