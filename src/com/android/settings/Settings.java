@@ -243,4 +243,6 @@ public class Settings extends SettingsActivity {
     // BananaDroid
     public static class BananaGearActivity extends SettingsActivity {}
     public static class SmartPixelsActivity extends SettingsActivity { /* empty */ }
+    public static class DevRunningServicesActivity extends SettingsActivity { /* empty */ }
+
 }
