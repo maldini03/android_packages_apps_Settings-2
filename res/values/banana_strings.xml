@@ -253,4 +253,7 @@
     <!-- Back gesture haptic -->
     <string name="back_gesture_haptic_title">Back gesture haptic</string>
     <string name="back_gesture_haptic_summary">Vibrate when performing a back gesture</string>
+
+    <!-- Running services - Background processes tab -->
+    <string name="background_processes_settings_title">Background processes</string>
 </resources>

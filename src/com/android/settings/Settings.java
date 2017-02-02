@@ -445,4 +445,6 @@ public class Settings extends SettingsActivity {
 
     // SmartPixels
     public static class SmartPixelsActivity extends SettingsActivity {}
+
+    public static class DevRunningServicesActivity extends SettingsActivity { /* empty */ }
 }
