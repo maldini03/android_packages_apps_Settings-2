@@ -119,4 +119,8 @@
     <string name="screen_time_summary_usage_today">%1$s today</string>
 
     <string name="battery_temp">Battery temperature</string>
+
+    <!-- Pocket judge -->
+    <string name="pocket_judge_title">Pocket detection</string>
+    <string name="pocket_judge_summary">Block screen and button inputs when device is in pocket</string>
 </resources>
