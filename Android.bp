@@ -44,7 +44,18 @@ android_library {
         "SettingsLib-search-defaults",
     ],
 
-    srcs: ["src/**/*.java", "src/**/*.kt"],
+    srcs: [
+           "src/**/*.java",
+           "src/**/*.kt",
+           "BananaGear/src/**/*.java",
+           "BananaGear/src/**/*.kt",
+    ],
+
+    resource_dirs: ["res",
+                   "BananaGear/res",
+    ],
+
+    aaptflags: ["--extra-packages com.banana.settings"],
 
     static_libs: [
         "androidx-constraintlayout_constraintlayout",
