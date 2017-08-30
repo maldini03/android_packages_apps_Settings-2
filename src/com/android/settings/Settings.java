@@ -240,4 +240,7 @@ public class Settings extends SettingsActivity {
      */
     public static class MediaControlsSettingsActivity extends SettingsActivity {}
 
+    // BananaDroid
+    public static class BananaGearActivity extends SettingsActivity {}
+
 }

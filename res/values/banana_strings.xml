@@ -26,6 +26,10 @@
     <string name="build_date_default">2015-01-01-0000</string>
     <string name="keywords_build_date">build date, build info</string>
 
+    <!-- BananaGear -->
+    <string name="bananagear_title">Banana Gear</string>
+    <string name="bananagear_summary">Customization tools</string>
+
     <!-- SELinux Status -->
     <string name="selinux_status">SELinux status</string>
     <string name="selinux_status_disabled">Disabled</string>
