@@ -87,3 +87,6 @@
 -keep class **.R$* {
     <fields>;
 }
+
+# BananaGear
+-keep class com.banana.settings.**
