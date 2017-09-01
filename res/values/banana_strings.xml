@@ -57,4 +57,8 @@
     <!-- Hotspot VPN -->
     <string name="tethering_allow_vpn_upstreams_title">Allow clients to use VPNs</string>
     <string name="tethering_allow_vpn_upstreams_summary">Permit hotspot clients to use this device\u2019s VPN connections for upstream connectivity</string>
+
+    <!--Double Tap to Sleep Lockscreen-->
+    <string name="double_tap_sleep_lockscreen_title">Tap lockscreen to sleep</string>
+    <string name="double_tap_sleep_lockscreen_summary">Double tap to sleep on lockscreen</string>
 </resources>
