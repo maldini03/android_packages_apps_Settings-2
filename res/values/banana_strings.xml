@@ -380,4 +380,10 @@
     <!-- CustomUI -->
     <string name="custom_ui_toggle_title">Use alternate settings UI</string>
     <string name="custom_ui_toggle_summary">A reimagined custom UI</string>
+
+    <!-- Torch Power button gestures -->
+    <string name="torch_power_button_gesture_title">Toggle torch when screen off</string>
+    <string name="torch_power_button_gesture_none">Disabled</string>
+    <string name="torch_power_button_gesture_dt">Double press power button</string>
+    <string name="torch_power_button_gesture_lp">Long press power button</string>
 </resources>
