@@ -11,4 +11,7 @@
         <attr name="defaultValuePure" format="float" />
         <attr name="digits" format="integer" />
     </declare-styleable>
+
+    <!-- Increasing ring feature -->
+    <attr name="customPreferenceStyle" format="reference" />
 </resources>
