@@ -3464,6 +3464,9 @@
                 android:resource="@string/bananagear_summary"/>
         </activity>
 
+        <!-- Hide Apps from Recents (HAFR) -->
+        <activity android:name="com.banana.settings.fragments.hideappfromrecents.HAFRAppListActivity" />
+
         <!-- This is the longest AndroidManifest.xml ever. -->
     </application>
 </manifest>
