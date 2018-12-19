@@ -120,6 +120,12 @@
         android:summary="@string/volume_steps_summary"
         android:fragment="com.banana.settings.fragments.VolumeSteps" />
 
+    <com.banana.support.preferences.SecureSettingSwitchPreference
+        android:key="volume_panel_on_left"
+        android:title="@string/volume_panel_on_left_title"
+        android:summary="@string/volume_panel_on_left_summary"
+        android:defaultValue="false" />
+
     <!-- TODO(b/174964721): make this a PrimarySwitchPreference -->
     <!-- Interruptions -->
     <com.android.settingslib.RestrictedPreference
