@@ -40,6 +40,7 @@ import androidx.annotation.VisibleForTesting;
 import androidx.loader.app.LoaderManager;
 import androidx.loader.app.LoaderManager.LoaderCallbacks;
 import androidx.loader.content.Loader;
+import androidx.preference.Preference;
 
 import com.android.settings.R;
 import com.android.settings.SettingsActivity;
@@ -55,6 +56,8 @@ import com.android.settingslib.search.SearchIndexable;
 import com.android.settingslib.utils.PowerUtil;
 import com.android.settingslib.utils.StringUtil;
 import com.android.settingslib.widget.LayoutPreference;
+
+import com.android.internal.util.banana.bananaUtils;
 
 import java.util.List;
 
@@ -72,6 +75,7 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
 
     private static final String KEY_SCREEN_USAGE = "screen_usage";
     private static final String KEY_TIME_SINCE_LAST_FULL_CHARGE = "last_full_charge";
+    private static final String KEY_BATTERY_TEMP = "battery_temp";
 
     @VisibleForTesting
     static final int BATTERY_INFO_LOADER = 1;
@@ -86,6 +90,8 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
     PowerGaugePreference mScreenUsagePref;
     @VisibleForTesting
     PowerGaugePreference mLastFullChargePref;
+    @VisibleForTesting
+    PowerGaugePreference mBatteryTemp;
     @VisibleForTesting
     PowerUsageFeatureProvider mPowerFeatureProvider;
     @VisibleForTesting
@@ -102,6 +108,8 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
     @VisibleForTesting
     BatteryTipPreferenceController mBatteryTipPreferenceController;
     BatteryMeterView mBatteryView;
+
+    private boolean batteryTemp = false;
 
     @VisibleForTesting
     final ContentObserver mSettingsObserver = new ContentObserver(new Handler()) {
@@ -223,6 +231,7 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
         mScreenUsagePref = (PowerGaugePreference) findPreference(KEY_SCREEN_USAGE);
         mLastFullChargePref = (PowerGaugePreference) findPreference(
                 KEY_TIME_SINCE_LAST_FULL_CHARGE);
+        mBatteryTemp = (PowerGaugePreference) findPreference(KEY_BATTERY_TEMP);
         mBatteryUtils = BatteryUtils.getInstance(getContext());
 
         if (Utils.isBatteryPresent(getContext())) {
@@ -241,6 +250,8 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
                         .setTitleRes(R.string.advanced_battery_title)
                         .launch();
             return true;
+        } else if (KEY_BATTERY_TEMP.equals(preference.getKey())) {
+            updateBatteryTempPreference();
         }
         return super.onPreferenceTreeClick(preference);
     }
@@ -348,6 +359,7 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
         updateLastFullChargePreference();
         mScreenUsagePref.setSummary(StringUtil.formatElapsedTime(getContext(),
                 mBatteryUtils.calculateScreenUsageTime(mStatsHelper), false));
+        updateBatteryTempPreference(false);
     }
 
     @VisibleForTesting
@@ -375,6 +387,19 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
             mLastFullChargePref.setSummary(
                     StringUtil.formatRelativeTime(getContext(), lastFullChargeTime,
                             false /* withSeconds */));
+        }
+    }
+
+    @VisibleForTesting
+    void updateBatteryTempPreference() {
+        if (batteryTemp) {
+            mBatteryTemp.setSubtitle(
+                bananaUtils.batteryTemperature(getContext(), false));
+            batteryTemp = false;
+        } else {
+            mBatteryTemp.setSubtitle(
+                bananaUtils.batteryTemperature(getContext(), true));
+            batteryTemp = true;
         }
     }
 
