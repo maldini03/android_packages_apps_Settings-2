@@ -49,4 +49,7 @@
              relative to the natural orientation of the display
              (true for some tablets) -->
     <integer name="config_volumeRockerVsDisplayOrientation">1</integer>
+
+    <!-- Smart Charging -->
+    <bool name="config_supportSmartCharging">false</bool>
 </resources>
