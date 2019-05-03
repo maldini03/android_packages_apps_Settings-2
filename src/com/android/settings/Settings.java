@@ -440,4 +440,6 @@ public class Settings extends SettingsActivity {
     // BananaDroid
     public static class BananaGearActivity extends SettingsActivity {}
 
+    // LiveDisplay
+    public static class LiveDisplaySettingsActivity extends SettingsActivity { /* empty */ }
 }
