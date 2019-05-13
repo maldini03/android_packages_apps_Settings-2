@@ -477,6 +477,11 @@ public class LiveDisplaySettings extends SettingsPreferenceFragment implements
             if (!config.hasFeature(FEATURE_ANTI_FLICKER)) {
                 result.add(KEY_LIVE_DISPLAY_ANTI_FLICKER);
             }
+            if (!context.getResources().getBoolean(
+                    com.android.internal.R.bool.config_enableLiveDisplay)) {
+                result.add(KEY_LIVE_DISPLAY_TEMPERATURE);
+                result.add(KEY_LIVE_DISPLAY);
+            }
 
             return result;
         }
