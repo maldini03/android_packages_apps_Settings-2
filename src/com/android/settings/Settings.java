@@ -444,4 +444,7 @@ public class Settings extends SettingsActivity {
 
     // LiveDisplay
     public static class LiveDisplaySettingsActivity extends SettingsActivity { /* empty */ }
+
+    // SmartPixels
+    public static class SmartPixelsActivity extends SettingsActivity {}
 }
