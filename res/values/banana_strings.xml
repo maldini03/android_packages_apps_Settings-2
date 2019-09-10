@@ -92,4 +92,8 @@
     <string name="gesture_navbar_length_title">Pill length</string>
     <string name="short_label">Short</string>
     <string name="long_label">Long</string>
+
+    <!-- Double Tap to Sleep Statusbar -->
+    <string name="double_tap_to_sleep_title">Tap statusbar to sleep</string>
+    <string name="double_tap_to_sleep_summary">Double-tap anywhere on the status bar to put the device to sleep</string>
 </resources>
