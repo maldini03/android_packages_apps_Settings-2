@@ -98,6 +98,12 @@
         android:title="@string/dt2s_category">
 
         <com.bananadroid.support.preferences.SystemSettingSwitchPreference
+            android:key="double_tap_sleep_gesture"
+            android:title="@string/double_tap_sleep_gesture_title"
+            android:summary="@string/double_tap_sleep_gesture_summary"
+            android:defaultValue="true" />
+
+        <com.bananadroid.support.preferences.SystemSettingSwitchPreference
             android:key="double_tap_sleep_lockscreen"
             android:title="@string/double_tap_sleep_lockscreen_title"
             android:summary="@string/double_tap_sleep_lockscreen_summary"
