@@ -104,4 +104,8 @@
     <!--Double Tap to Sleep Lockscreen-->
     <string name="double_tap_to_sleep_lockscreen_title">Tap lockscreen to sleep</string>
     <string name="double_tap_to_sleep_lockscreen_summary">Double tap to sleep on lockscreen</string>
+
+    <!-- Brightness control -->
+    <string name="status_bar_toggle_brightness">Brightness control</string>
+    <string name="status_bar_toggle_brightness_summary">Adjust brightness by sliding across the status bar</string>
 </resources>
