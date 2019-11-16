@@ -162,6 +162,7 @@ import com.android.settings.wifi.savedaccesspoints2.SavedAccessPointsWifiSetting
 import com.android.settings.wifi.tether.WifiTetherSettings;
 
 import com.banana.settings.BananaGear;
+import com.banana.settings.fragments.GamingMode;
 import com.banana.settings.fragments.SmartPixels;
 
 public class SettingsGateway {
@@ -314,7 +315,8 @@ public class SettingsGateway {
             MediaControlsSettings.class.getName(),
             BananaGear.class.getName(),
             SmartPixels.class.getName(),
-            RunningServices.class.getName()
+            RunningServices.class.getName(),
+            GamingMode.class.getName()
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {
@@ -358,5 +360,6 @@ public class SettingsGateway {
             Settings.BananaGearActivity.class.getName(),
             Settings.SmartPixelsActivity.class.getName(),
             Settings.DevRunningServicesActivity.class.getName(),
+            Settings.GamingModeActivity.class.getName(),
     };
 }
