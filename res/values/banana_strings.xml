@@ -8,6 +8,7 @@
     <!-- About phone screen,  setting option name  [CHAR LIMIT=40] -->
     <string name="build_date">Build date</string>
     <string name="banana_version">BananaDroid version</string>
+    <string name="about_device_name">Device</string>
 
     <!-- String for removal of sensitive info on about, depending on tap -->
     <string name="device_info_protected_single_press">Tap to show info</string>
