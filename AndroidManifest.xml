@@ -123,6 +123,8 @@
     <!-- LiveDisplay -->
     <uses-permission android:name="lineageos.permission.MANAGE_LIVEDISPLAY" />
 
+    <protected-broadcast android:name="com.android.systemui.doze.pulse" />
+
     <application
             android:name=".SettingsApplication"
             android:label="@string/settings_label"
@@ -4355,5 +4357,16 @@
                 android:resource="@string/bananagear_summary"/>
         </activity>
 
+        <receiver android:name="com.banana.settings.fragments.doze.DozeReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+        <service android:name="com.banana.settings.fragments.doze.DozeService"
+                android:exported="true"
+                android:permission="BananaDozeService">
+        </service>
     </application>
 </manifest>
