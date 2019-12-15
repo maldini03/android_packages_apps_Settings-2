@@ -128,6 +128,8 @@
     <uses-permission android:name="com.android.settings.FACE_UNLOCK"/>
     <permission android:name="com.android.settings.FACE_UNLOCK" android:protectionLevel="signatureOrSystem"/>
 
+    <protected-broadcast android:name="com.android.systemui.doze.pulse" />
+
     <application
             android:name=".SettingsApplication"
             android:label="@string/settings_label"
@@ -4622,5 +4624,16 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <receiver android:name="com.banana.settings.fragments.doze.DozeReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+        <service android:name="com.banana.settings.fragments.doze.DozeService"
+                android:exported="true"
+                android:permission="BananaDozeService">
+        </service>
     </application>
 </manifest>
