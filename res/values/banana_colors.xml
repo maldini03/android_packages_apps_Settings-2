@@ -15,5 +15,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Themes -->
+    <color name="homepage_themes_background">#536dfe</color>
 
 </resources>
