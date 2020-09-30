@@ -37,4 +37,8 @@
     <string name="config_batteryDesignCapacity">/sys/class/power_supply/bms/charge_full_design</string>
     <string name="config_batteryChargeCycles">/sys/class/power_supply/bms/cycle_count</string>
     <bool name="config_supportBatteryHealth">false</bool>
+
+    <string-array name="config_ignored_backup_transports" translatable="false">
+        <item>com.android.localtransport/.LocalTransport</item>
+    </string-array>
 </resources>
