@@ -45,4 +45,9 @@
     <!--Double Tap to Sleep Lockscreen-->
     <string name="double_tap_sleep_lockscreen_title">Tap lockscreen to sleep</string>
     <string name="double_tap_sleep_lockscreen_summary">Double tap to sleep on lockscreen</string>
+
+    <!-- Navbar length -->
+    <string name="navbar_length">Gesture bar length</string>
+    <string name="short_label">Short</string>
+    <string name="long_label">Long</string>
 </resources>
