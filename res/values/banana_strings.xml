@@ -493,4 +493,8 @@
     <string name="dc_dimming_off_auto_mode_auto">Will turn on automatically</string>
     <string name="dc_dimming_on_auto_mode_auto">Will turn off automatically</string>
     <string name="keywords_display_dc_dimming">dc dimming, flicker, eye, strain</string>
+
+    <!-- Misc gesture settings -->
+    <string name="back_gesture_haptic_title">Haptic feedback</string>
+    <string name="back_gesture_haptic_summary">Enable haptic tick effect on back gesture</string>
 </resources>
