@@ -96,6 +96,12 @@
         android:defaultValue="true"
         android:order="-138" />
 
+    <!-- Volume panel to left -->
+    <com.banana.support.preferences.SystemSettingSwitchPreference
+        android:key="volume_panel_on_left"
+        android:title="@string/volume_panel_on_left_title"
+        android:summary="@string/volume_panel_on_left_summary" />
+
     <!-- TODO(b/174964721): make this a PrimarySwitchPreference -->
     <!-- Interruptions -->
     <com.android.settingslib.RestrictedPreference
