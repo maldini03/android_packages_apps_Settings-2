@@ -227,4 +227,10 @@
     <string name="ambient_display_screen_off_udfps_title">Long press on fingerprint sensor to unlock device</string>
     <!-- Summary text for screen off UDFPS [CHAR LIMIT=NONE]-->
     <string name="ambient_display_screen_off_udfps_summary">To wake up your screen and unlock, long press your under-display fingerprint sensor.</string>
+
+    <!-- Back gesture height -->
+    <string name="back_height_low_label">Full</string>
+    <string name="back_height_high_label">Bottom</string>
+    <string name="back_height_title">Back gesture height</string>
+    <string name="back_height_summary">Screen height valid for back gesture</string>
 </resources>
