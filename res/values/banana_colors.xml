@@ -31,4 +31,6 @@
     <!-- BananaDroid settings icon background-->
     <color name="homepage_bananagear_background">#f3d324</color>
 
+    <color name="settingsHeaderColor">@*android:color/accent_device_default_light</color>
+
 </resources>
