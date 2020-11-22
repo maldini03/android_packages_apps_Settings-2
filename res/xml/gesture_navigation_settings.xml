@@ -53,6 +53,12 @@
         settings:textStart="@string/smallest_tick_label"
         settings:textEnd="@string/greatest_tick_label"/>
 
+    <com.bananadroid.support.preferences.SecureSettingSwitchPreference
+        android:key="navigation_bar_hint"
+        android:title="@string/show_gestures_navbar_switch_title"
+        android:summary="@string/show_gestures_navbar_switch_summary"
+        android:defaultValue="true" />
+
     <Preference
         android:key="gesture_nav_custom_options"
         android:title="@string/navbar_gesture_tweaks_pref_title"
@@ -67,4 +73,3 @@
         settings:searchable="false"
         settings:allowDividerAbove="true"/>
 </PreferenceScreen>
-
