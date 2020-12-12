@@ -20,6 +20,8 @@ import static com.android.settings.fuelgauge.BatteryBroadcastReceiver.BatteryUpd
 
 import android.app.settings.SettingsEnums;
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.database.ContentObserver;
 import android.net.Uri;
 import android.app.AlertDialog;
@@ -109,7 +111,8 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
     BatteryTipPreferenceController mBatteryTipPreferenceController;
     BatteryMeterView mBatteryView;
 
-    private boolean batteryTemp = false;
+    private SharedPreferences mSharedPreferences;
+    private boolean mUsesCelcius = true;
 
     @VisibleForTesting
     final ContentObserver mSettingsObserver = new ContentObserver(new Handler()) {
@@ -223,6 +226,8 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
         super.onCreate(icicle);
         setAnimationAllowed(true);
 
+        mSharedPreferences = getContext().getSharedPreferences("power_usage_summary", 0);
+
         initFeatureProvider();
         mBatteryLayoutPref = (LayoutPreference) findPreference(KEY_BATTERY_HEADER);
         mBatteryView = mBatteryLayoutPref.findViewById(R.id.battery_header_icon);
@@ -239,6 +244,13 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
         }
         mBatteryTipPreferenceController.restoreInstanceState(icicle);
         updateBatteryTipFlag(icicle);
+
+        mUsesCelcius = mSharedPreferences.getBoolean("uses_celcius", true);
+        Editor editor = mSharedPreferences.edit();
+        editor.putBoolean("uses_celcius", mUsesCelcius);
+        editor.commit();
+
+        updateBatteryTempPreference(false);
     }
 
     @Override
@@ -251,7 +263,7 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
                         .launch();
             return true;
         } else if (KEY_BATTERY_TEMP.equals(preference.getKey())) {
-            updateBatteryTempPreference();
+            updateBatteryTempPreference(true);
         }
         return super.onPreferenceTreeClick(preference);
     }
@@ -391,16 +403,18 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
     }
 
     @VisibleForTesting
-    void updateBatteryTempPreference() {
-        if (batteryTemp) {
+    void updateBatteryTempPreference(boolean updateTempUnit) {
+        if (updateTempUnit) {
+            mUsesCelcius = !mUsesCelcius;
             mBatteryTemp.setSubtitle(
-                bananaUtils.batteryTemperature(getContext(), false));
-            batteryTemp = false;
+                bananaUtils.batteryTemperature(getContext(), mUsesCelcius));
         } else {
             mBatteryTemp.setSubtitle(
-                bananaUtils.batteryTemperature(getContext(), true));
-            batteryTemp = true;
+                bananaUtils.batteryTemperature(getContext(), mUsesCelcius));
         }
+        Editor editor = mSharedPreferences.edit();
+        editor.putBoolean("uses_celcius", mUsesCelcius);
+        editor.commit();
     }
 
     @VisibleForTesting
