@@ -377,4 +377,8 @@
     <string name="pattern_custom">Custom</string>
     <string name="custom_vibration_pattern_title">Set a custom vibration pattern</string>
 
+    <!-- global cleartext penalties -->
+    <string name="cleartext_network_policy_title">Restrict cleartext network traffic</string>
+    <string name="cleartext_network_policy_summary">Blocks all non-TLS network traffic. Requires Private DNS configuration. Note: Without explicit exemptions, Tor and most VPNs won\'t work</string>
+
 </resources>
