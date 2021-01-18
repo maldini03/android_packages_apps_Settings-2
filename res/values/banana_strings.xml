@@ -252,4 +252,7 @@
     <!-- Notification log -->
     <string name="notification_log_summary">Show notifications history log</string>
 
+    <!-- FastCharge feature -->
+    <string name="fast_charging_title">Fast charging</string>
+    <string name="fast_charging_summary">Disable to reduce the heat produced by the device while charging or to extend the lifespan of the battery</string>
 </resources>
