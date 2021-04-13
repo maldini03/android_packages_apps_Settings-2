@@ -404,4 +404,7 @@
     <string name="touchscreen_gesture_settings_title">Touchscreen gestures</string>
     <string name="touchscreen_gesture_settings_summary">Perform various touchscreen gestures for quick actions</string>
 
+    <!-- Battery saver -->
+    <string name="battery_saver_is_enabled">Battery saver is enabled</string>
+
 </resources>
