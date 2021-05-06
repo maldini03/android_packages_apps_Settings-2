@@ -86,11 +86,23 @@
         android:title="@string/power_menu_setting_name"
         android:fragment="com.android.settings.gestures.PowerMenuSettings"
         settings:controller="com.android.settings.gestures.PowerMenuPreferenceController" />
-    
+
     <Preference
         android:key="gesture_swipe_to_screenshot_summary"
         android:title="@string/swipe_to_screenshot_gesture_title"
         android:fragment="com.android.settings.gestures.SwipeToScreenshotGestureSettings"
         settings:controller="com.android.settings.gestures.SwipeToScreenshotGesturePreferenceController" />
+
+    <PreferenceCategory
+        android:key="dt2s_category"
+        android:title="@string/dt2s_category">
+
+        <com.bananadroid.support.preferences.SystemSettingSwitchPreference
+            android:key="double_tap_sleep_lockscreen"
+            android:title="@string/double_tap_sleep_lockscreen_title"
+            android:summary="@string/double_tap_sleep_lockscreen_summary"
+            android:defaultValue="true" />
+
+    </PreferenceCategory>
 
 </PreferenceScreen>
