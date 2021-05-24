@@ -20,6 +20,10 @@
     xmlns:settings="http://schemas.android.com/apk/res-auto"
     android:title="@string/gesture_preference_title">
 
+    <PreferenceCategory
+        android:key="stock_gestures_category"
+        android:title="@string/stock_gestures_category_title">
+
     <Preference
         android:key="gesture_assist_input_summary"
         android:title="@string/assist_gesture_title"
@@ -98,6 +102,8 @@
         android:title="@string/volume_skiptrack_screen_title"
         android:fragment="com.android.settings.gestures.VolumeSkipTrackSettings"
         settings:controller="com.android.settings.gestures.VolumeSkipTrackPreferenceController" />
+
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="dt2s_category"
