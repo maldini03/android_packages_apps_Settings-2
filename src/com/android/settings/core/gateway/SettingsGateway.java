@@ -168,6 +168,7 @@ import com.banana.settings.BananaGear;
 import com.banana.settings.fragments.GamingMode;
 import com.banana.settings.fragments.SmartPixels;
 import com.banana.settings.fragments.OmniJawsSettings;
+import com.banana.settings.fragments.SleepMode;
 
 public class SettingsGateway {
 
@@ -324,7 +325,8 @@ public class SettingsGateway {
             RunningServices.class.getName(),
             GamingMode.class.getName(),
             OmniJawsSettings.class.getName(),
-            LiveDisplaySettings.class.getName()
+            LiveDisplaySettings.class.getName(),
+            SleepMode.class.getName(),
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {
@@ -370,5 +372,6 @@ public class SettingsGateway {
             Settings.DevRunningServicesActivity.class.getName(),
             Settings.GamingModeActivity.class.getName(),
             Settings.OmniJawsSettingsActivity.class.getName(),
+            Settings.SleepModeActivity.class.getName(),
     };
 }
