@@ -121,6 +121,15 @@
         android:fragment="com.android.settings.security.SecuritySettings"
         settings:controller="com.android.settings.security.TopLevelSecurityEntryPreferenceController"/>
 
+    <Preference
+        android:key="top_level_accessibility"
+        android:title="@string/accessibility_settings"
+        android:summary="@string/accessibility_settings_summary"
+        android:icon="@drawable/ic_homepage_accessibility_oos2"
+        android:order="-27"
+        android:fragment="com.android.settings.accessibility.AccessibilitySettings"
+        settings:controller="com.android.settings.accessibility.TopLevelAccessibilityPreferenceController"/>
+
     <com.android.settings.ui.TopLevelPreferenceDivider
         android:key="top_level_divider_three"
         android:order="-25"/>

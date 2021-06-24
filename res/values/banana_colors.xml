@@ -72,6 +72,7 @@
     <color name="oos2_homepage_background">#f7f7f7</color>
     <color name="oos2_homepage_icon_background">#f7f7f7</color>
     <color name="oos2_homepage_icon_about_device_color">#6971c7</color>
+    <color name="oos2_homepage_icon_accessibility_color">#5011c1</color>
     <color name="oos2_homepage_icon_accounts_color">#f1c542</color>
     <color name="oos2_homepage_icon_app_color">#6a41b1</color>
     <color name="oos2_homepage_icon_battery_color">#38946f</color>
