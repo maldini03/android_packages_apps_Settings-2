@@ -145,11 +145,6 @@
         android:title="@string/proximity_wake_title"
         android:summary="@string/proximity_wake_summary" />
 
-    <SwitchPreference
-        android:key="enable_blurs_on_windows"
-        android:title="@string/enable_blurs_on_windows_title"
-        android:summary="@string/enable_blurs_on_windows_summary" />
-
     <ListPreference
         android:key="theme"
         android:title="@string/device_theme"
