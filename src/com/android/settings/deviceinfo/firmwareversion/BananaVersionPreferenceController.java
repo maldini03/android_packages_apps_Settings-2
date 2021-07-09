@@ -29,7 +29,7 @@ import com.android.settings.core.BasePreferenceController;
 public class BananaVersionPreferenceController extends BasePreferenceController {
 
     @VisibleForTesting
-    static final String BANANA_VERSION_PROPERTY = "ro.banana.build.version";
+    static final String BANANA_VERSION_PROPERTY = "ro.banana.displayed.version";
     static final String BANANA_RELEASETYPE_PROPERTY = "ro.banana.releasetype";
 
     public BananaVersionPreferenceController(Context context, String preferenceKey) {
