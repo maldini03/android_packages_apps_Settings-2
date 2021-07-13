@@ -34,5 +34,4 @@
     <color name="custom_top_cardview">#242527</color>
     <color name="op_preference_card_background_color">#ff1c1c1e</color>
     <color name="op_preference_card_background_color_ripple">#33ffffff</color>
-    <color name="settext">#FFFFFF</color>
 </resources>
