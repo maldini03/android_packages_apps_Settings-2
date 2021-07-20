@@ -33,5 +33,6 @@
     <color name="custom_cardview">#242527</color>
     <color name="custom_top_cardview">#242527</color>
     <color name="custom_ripple_background">#4DFFFFFF</color>
+    <color name="custom_bg">@*android:color/primary_dark_device_default_settings</color>
 
 </resources>

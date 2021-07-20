@@ -93,4 +93,6 @@
     <color name="oos2_homepage_icon_bananagear_color">#f3d324</color>
 
     <color name="custom_ripple_background">#4DFFFFFF</color>
+    <color name="custom_bg">@android:color/white</color>
+
 </resources>
