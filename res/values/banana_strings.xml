@@ -233,12 +233,11 @@
     <string name="clipboard_toast_info_show_all">Show all access alerts</string>
 
     <!-- Adaptive charging -->
-    <string name="adaptive_charging_title">Adaptive Charging</string>
-    <string name="adaptive_charging_summary">On / Conditionally restricting charging</string>
-    <string name="adaptive_charging_mode_title">Restriction mode</string>
-    <string name="adaptive_charging_mode_level">Battery percentage</string>
-    <string name="adaptive_charging_mode_temperature">Battery temperature</string>
-    <string name="adaptive_charging_mode_both">Battery percentage or temperature</string>
+    <string name="adaptive_charging_category_title">Adaptive charging</string>
+    <string name="adaptive_charging_title">Adaptive percentage</string>
+    <string name="adaptive_charging_summary">On / Conditionally restricting charging based on battery percentage</string>
+    <string name="adaptive_charging_temperature_title">Adaptive temperature</string>
+    <string name="adaptive_charging_temperature_summary">On / Conditionally restricting charging based on battery temperature</string>
     <string name="adaptive_charging_cutoff_title">Stop charging at</string>
     <string name="adaptive_charging_resume_title">Resume charging at</string>
     <string name="adaptive_charging_reset_stats_title">Reset battery stats</string>

@@ -18,30 +18,24 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-    android:key="adaptive_charging_preference"
-    android:title="@string/adaptive_charging_title">
+    android:key="adaptive_charging_temperature_preference"
+    android:title="@string/adaptive_charging_temperature_title">
 
     <com.bananadroid.support.preferences.CustomSeekBarPreference
-        android:key="adaptive_charging_cutoff_level"
+        android:key="adaptive_charging_cutoff_temperature"
         android:title="@string/adaptive_charging_cutoff_title"
-        android:max="100"
-        settings:min="65"
-        settings:units="%"
-        android:defaultValue="80" />
+        android:max="45"
+        settings:min="25"
+        settings:units="°C"
+        android:defaultValue="30" />
 
     <com.bananadroid.support.preferences.CustomSeekBarPreference
-        android:key="adaptive_charging_resume_level"
+        android:key="adaptive_charging_resume_temperature"
         android:title="@string/adaptive_charging_resume_title"
-        android:max="99"
-        settings:min="1"
-        settings:units="%"
-        android:defaultValue="60" />
-
-    <com.bananadroid.support.preferences.SystemSettingSwitchPreference
-        android:key="adaptive_charging_reset_stats"
-        android:title="@string/adaptive_charging_reset_stats_title"
-        android:summary="@string/adaptive_charging_reset_stats_summary"
-        android:defaultValue="false" />
+        android:max="35"
+        settings:min="20"
+        settings:units="°C"
+        android:defaultValue="25" />
 
     <com.android.settingslib.widget.FooterPreference
         android:key="adaptive_charging_footer_preference"

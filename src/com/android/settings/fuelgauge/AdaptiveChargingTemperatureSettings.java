@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 RevengeOS
+ * Copyright (C) 2021 Palladium-OS
  * Copyright (C) 2021 Havoc-OS
  * Copyright (C) 2021 The Evolution X Project
  *
@@ -49,23 +49,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Settings screen for Adapative Charging
+ * Settings screen for Adapative Charging Temperature
  */
 @SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
-public class AdaptiveChargingSettings extends DashboardFragment implements
+public class AdaptiveChargingTemperatureSettings extends DashboardFragment implements
         OnPreferenceChangeListener, CompoundButton.OnCheckedChangeListener {
 
-    private static final String TAG = "AdaptiveChargingSettings";
-    private static final String KEY_ADAPTIVE_CHARGING_CUTOFF_LEVEL = "adaptive_charging_cutoff_level";
-    private static final String KEY_ADAPTIVE_CHARGING_RESUME_LEVEL = "adaptive_charging_resume_level";
-    private static final String KEY_ADAPTIVE_CHARGING_RESET_STATS = "adaptive_charging_reset_stats";
+    private static final String TAG = "AdaptiveChargingTemperatureSettings";
+    private static final String KEY_ADAPTIVE_CHARGING_CUTOFF_TEMPERATURE = "adaptive_charging_cutoff_temperature";
+    private static final String KEY_ADAPTIVE_CHARGING_RESUME_TEMPERATURE = "adaptive_charging_resume_temperature";
 
-    private CustomSeekBarPreference mAdaptiveChargingCutoffLevel;
-    private CustomSeekBarPreference mAdaptiveChargingResumeLevel;
-    private SystemSettingSwitchPreference mResetStats;
+    private CustomSeekBarPreference mAdaptiveChargingCutoffTemperature;
+    private CustomSeekBarPreference mAdaptiveChargingResumeTemperature;
 
-    private int mAdaptiveChargingCutoffLevelConfig;
-    private int mAdaptiveChargingResumeLevelConfig;
+    private int mAdaptiveChargingCutoffTemperatureConfig;
+    private int mAdaptiveChargingResumeTemperatureConfig;
 
     private TextView mTextView;
     private View mSwitchBar;
@@ -73,26 +71,24 @@ public class AdaptiveChargingSettings extends DashboardFragment implements
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        mAdaptiveChargingCutoffLevelConfig = getResources().getInteger(
-                com.android.internal.R.integer.config_adaptiveChargingCutoffLevel);
-        mAdaptiveChargingResumeLevelConfig = getResources().getInteger(
-                com.android.internal.R.integer.config_adaptiveChargingResumeLevel);
+        mAdaptiveChargingCutoffTemperatureConfig = getResources().getInteger(
+                com.android.internal.R.integer.config_adaptiveChargingCutoffTemperature);
+        mAdaptiveChargingResumeTemperatureConfig = getResources().getInteger(
+                com.android.internal.R.integer.config_adaptiveChargingResumeTemperature);
 
-        mAdaptiveChargingCutoffLevel = (CustomSeekBarPreference) findPreference(KEY_ADAPTIVE_CHARGING_CUTOFF_LEVEL);
-        int currentCutoffLevel = Settings.System.getInt(getContentResolver(),
-                Settings.System.ADAPTIVE_CHARGING_CUTOFF_LEVEL, mAdaptiveChargingCutoffLevelConfig);
-        mAdaptiveChargingCutoffLevel.setValue(currentCutoffLevel);
-        mAdaptiveChargingCutoffLevel.setOnPreferenceChangeListener(this);
+        mAdaptiveChargingCutoffTemperature = (CustomSeekBarPreference) findPreference(KEY_ADAPTIVE_CHARGING_CUTOFF_TEMPERATURE);
+        int currentCutoffTemperature = Settings.System.getInt(getContentResolver(),
+                Settings.System.ADAPTIVE_CHARGING_CUTOFF_TEMPERATURE, mAdaptiveChargingCutoffTemperatureConfig);
+        mAdaptiveChargingCutoffTemperature.setValue(currentCutoffTemperature);
+        mAdaptiveChargingCutoffTemperature.setOnPreferenceChangeListener(this);
 
-        mAdaptiveChargingResumeLevel = (CustomSeekBarPreference) findPreference(KEY_ADAPTIVE_CHARGING_RESUME_LEVEL);
-        int currentResumeLevel = Settings.System.getInt(getContentResolver(),
-                Settings.System.ADAPTIVE_CHARGING_RESUME_LEVEL, mAdaptiveChargingResumeLevelConfig);
-        mAdaptiveChargingResumeLevel.setMax(currentCutoffLevel - 1);
-        if (currentResumeLevel >= currentCutoffLevel) currentResumeLevel = currentCutoffLevel -1;
-        mAdaptiveChargingResumeLevel.setValue(currentResumeLevel);
-        mAdaptiveChargingResumeLevel.setOnPreferenceChangeListener(this);
-
-        mResetStats = (SystemSettingSwitchPreference) findPreference(KEY_ADAPTIVE_CHARGING_RESET_STATS);
+        mAdaptiveChargingResumeTemperature = (CustomSeekBarPreference) findPreference(KEY_ADAPTIVE_CHARGING_RESUME_TEMPERATURE);
+        int currentResumeTemperature = Settings.System.getInt(getContentResolver(),
+                Settings.System.ADAPTIVE_CHARGING_RESUME_TEMPERATURE, mAdaptiveChargingResumeTemperatureConfig);
+        mAdaptiveChargingResumeTemperature.setMax(currentCutoffTemperature - 1);
+        if (currentResumeTemperature >= currentCutoffTemperature) currentResumeTemperature = currentCutoffTemperature -1;
+        mAdaptiveChargingResumeTemperature.setValue(currentResumeTemperature);
+        mAdaptiveChargingResumeTemperature.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -108,7 +104,7 @@ public class AdaptiveChargingSettings extends DashboardFragment implements
         super.onViewCreated(view, savedInstanceState);
 
         boolean enabled = Settings.System.getInt(getContentResolver(),
-                Settings.System.ADAPTIVE_CHARGING, 0) == 1;
+                Settings.System.ADAPTIVE_CHARGING_TEMPERATURE, 0) == 1;
 
         mTextView = view.findViewById(R.id.switch_text);
         mTextView.setText(getString(enabled ?
@@ -124,21 +120,19 @@ public class AdaptiveChargingSettings extends DashboardFragment implements
             mSwitchBar.setActivated(switchWidget.isChecked());
         });
 
-        mAdaptiveChargingCutoffLevel.setEnabled(enabled);
-        mAdaptiveChargingResumeLevel.setEnabled(enabled);
-        mResetStats.setEnabled(enabled);
+        mAdaptiveChargingCutoffTemperature.setEnabled(enabled);
+        mAdaptiveChargingResumeTemperature.setEnabled(enabled);
     }
 
     @Override
     public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
         Settings.System.putInt(getContentResolver(),
-                Settings.System.ADAPTIVE_CHARGING, isChecked ? 1 : 0);
+                Settings.System.ADAPTIVE_CHARGING_TEMPERATURE, isChecked ? 1 : 0);
         mTextView.setText(getString(isChecked ? R.string.switch_on_text : R.string.switch_off_text));
         mSwitchBar.setActivated(isChecked);
 
-        mAdaptiveChargingCutoffLevel.setEnabled(isChecked);
-        mAdaptiveChargingResumeLevel.setEnabled(isChecked);
-        mResetStats.setEnabled(isChecked);
+        mAdaptiveChargingCutoffTemperature.setEnabled(isChecked);
+        mAdaptiveChargingResumeTemperature.setEnabled(isChecked);
     }
 
     @Override
@@ -148,7 +142,7 @@ public class AdaptiveChargingSettings extends DashboardFragment implements
 
     @Override
     protected int getPreferenceScreenResId() {
-        return R.xml.adaptive_charging;
+        return R.xml.adaptive_charging_temperature;
     }
 
     @Override
@@ -158,26 +152,26 @@ public class AdaptiveChargingSettings extends DashboardFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
-        if (preference == mAdaptiveChargingCutoffLevel) {
-            int adaptiveChargingCutoffLevel = (Integer) objValue;
-            int adaptiveChargingResumeLevel = Settings.System.getInt(getContentResolver(),
-                    Settings.System.ADAPTIVE_CHARGING_RESUME_LEVEL, mAdaptiveChargingResumeLevelConfig);
+        if (preference == mAdaptiveChargingCutoffTemperature) {
+            int adaptiveChargingCutoffTemperature = (Integer) objValue;
+            int adaptiveChargingResumeTemperature = Settings.System.getInt(getContentResolver(),
+                    Settings.System.ADAPTIVE_CHARGING_RESUME_TEMPERATURE, mAdaptiveChargingResumeTemperatureConfig);
             Settings.System.putInt(getContentResolver(),
-                    Settings.System.ADAPTIVE_CHARGING_CUTOFF_LEVEL, adaptiveChargingCutoffLevel);
-            mAdaptiveChargingResumeLevel.setMax(adaptiveChargingCutoffLevel - 1);
-            if (adaptiveChargingCutoffLevel <= adaptiveChargingResumeLevel) {
-                mAdaptiveChargingResumeLevel.setValue(adaptiveChargingCutoffLevel - 1);
+                    Settings.System.ADAPTIVE_CHARGING_CUTOFF_TEMPERATURE, adaptiveChargingCutoffTemperature);
+            mAdaptiveChargingResumeTemperature.setMax(adaptiveChargingCutoffTemperature - 1);
+            if (adaptiveChargingCutoffTemperature <= adaptiveChargingResumeTemperature) {
+                mAdaptiveChargingResumeTemperature.setValue(adaptiveChargingCutoffTemperature - 1);
                 Settings.System.putInt(getContentResolver(),
-                        Settings.System.ADAPTIVE_CHARGING_RESUME_LEVEL, adaptiveChargingCutoffLevel - 1);
+                        Settings.System.ADAPTIVE_CHARGING_RESUME_TEMPERATURE, adaptiveChargingCutoffTemperature - 1);
             }
             return true;
-        } else if (preference == mAdaptiveChargingResumeLevel) {
-            int adaptiveChargingResumeLevel = (Integer) objValue;
-            int adaptiveChargingCutoffLevel = Settings.System.getInt(getContentResolver(),
-                    Settings.System.ADAPTIVE_CHARGING_CUTOFF_LEVEL, mAdaptiveChargingCutoffLevelConfig);
-            mAdaptiveChargingResumeLevel.setMax(adaptiveChargingCutoffLevel - 1);
+        } else if (preference == mAdaptiveChargingResumeTemperature) {
+            int adaptiveChargingResumeTemperature = (Integer) objValue;
+            int adaptiveChargingCutoffTemperature = Settings.System.getInt(getContentResolver(),
+                    Settings.System.ADAPTIVE_CHARGING_CUTOFF_TEMPERATURE, mAdaptiveChargingCutoffTemperatureConfig);
+            mAdaptiveChargingResumeTemperature.setMax(adaptiveChargingCutoffTemperature - 1);
             Settings.System.putInt(getContentResolver(),
-                    Settings.System.ADAPTIVE_CHARGING_RESUME_LEVEL, adaptiveChargingResumeLevel);
+                    Settings.System.ADAPTIVE_CHARGING_RESUME_TEMPERATURE, adaptiveChargingResumeTemperature);
             return true;
         } else {
             return false;
@@ -189,5 +183,5 @@ public class AdaptiveChargingSettings extends DashboardFragment implements
      */
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.adaptive_charging);
+            new BaseSearchIndexProvider(R.xml.adaptive_charging_temperature);
 }

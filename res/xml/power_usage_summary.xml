@@ -63,11 +63,22 @@
         android:summary="@string/fast_charging_summary"
         settings:controller="com.android.settings.fuelgauge.FastChargingPreferenceController"/>
 
-    <com.bananadroid.support.preferences.SystemSettingMasterSwitchPreference
-        android:fragment="com.android.settings.fuelgauge.AdaptiveChargingSettings"
-        android:key="adaptive_charging"
-        android:defaultValue="false"
-        android:title="@string/adaptive_charging_title" />
+    <PreferenceCategory
+        android:key="adaptive_charging_category"
+        android:title="@string/adaptive_charging_category_title">
+
+        <com.bananadroid.support.preferences.SystemSettingMasterSwitchPreference
+            android:fragment="com.android.settings.fuelgauge.AdaptiveChargingSettings"
+            android:key="adaptive_charging"
+            android:defaultValue="false"
+            android:title="@string/adaptive_charging_title" />
+
+        <com.bananadroid.support.preferences.SystemSettingMasterSwitchPreference
+            android:fragment="com.android.settings.fuelgauge.AdaptiveChargingTemperatureSettings"
+            android:key="adaptive_charging_temperature"
+            android:defaultValue="false"
+            android:title="@string/adaptive_charging_temperature_title" />
+    </PreferenceCategory>
 
     <com.android.settings.fuelgauge.PowerGaugePreference
         android:key="last_full_charge"

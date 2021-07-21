@@ -31,14 +31,14 @@ import com.android.settingslib.core.lifecycle.events.OnStop;
 
 import com.bananadroid.support.preferences.SystemSettingMasterSwitchPreference;
 
-public class AdaptiveChargingPreferenceController extends AbstractPreferenceController implements
+public class AdaptiveChargingTemperaturePreferenceController extends AbstractPreferenceController implements
         Preference.OnPreferenceChangeListener, LifecycleObserver, OnResume, OnPause, OnStart, OnStop {
 
-    private static final String KEY_ADAPTIVE_CHARGING = "adaptive_charging";
+    private static final String KEY_ADAPTIVE_CHARGING_TEMPERATURE = "adaptive_charging_temperature";
 
-    private SystemSettingMasterSwitchPreference mAdaptiveCharging;
+    private SystemSettingMasterSwitchPreference mAdaptiveChargingTemperature;
 
-    public AdaptiveChargingPreferenceController(Context context) {
+    public AdaptiveChargingTemperaturePreferenceController(Context context) {
         super(context);
     }
 
@@ -49,43 +49,43 @@ public class AdaptiveChargingPreferenceController extends AbstractPreferenceCont
 
     @Override
     public String getPreferenceKey() {
-        return KEY_ADAPTIVE_CHARGING;
+        return KEY_ADAPTIVE_CHARGING_TEMPERATURE;
     }
 
     @Override
     public void onResume() {
-        if (mAdaptiveCharging != null) updateState(mAdaptiveCharging);
+        if (mAdaptiveChargingTemperature != null) updateState(mAdaptiveChargingTemperature);
     }
 
     @Override
     public void onPause() {
-        if (mAdaptiveCharging != null) updateState(mAdaptiveCharging);
+        if (mAdaptiveChargingTemperature != null) updateState(mAdaptiveChargingTemperature);
     }
 
     @Override
     public void onStart() {
-        if (mAdaptiveCharging != null) updateState(mAdaptiveCharging);
+        if (mAdaptiveChargingTemperature != null) updateState(mAdaptiveChargingTemperature);
     }
 
     @Override
     public void onStop() {
-        if (mAdaptiveCharging != null) updateState(mAdaptiveCharging);
+        if (mAdaptiveChargingTemperature != null) updateState(mAdaptiveChargingTemperature);
     }
 
     @Override
     public void displayPreference(PreferenceScreen screen) {
-        mAdaptiveCharging = (SystemSettingMasterSwitchPreference) screen.findPreference(KEY_ADAPTIVE_CHARGING);
-        mAdaptiveCharging.setChecked((Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.ADAPTIVE_CHARGING, 0) == 1));
-        mAdaptiveCharging.setOnPreferenceChangeListener(this);
+        mAdaptiveChargingTemperature = (SystemSettingMasterSwitchPreference) screen.findPreference(KEY_ADAPTIVE_CHARGING_TEMPERATURE);
+        mAdaptiveChargingTemperature.setChecked((Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.ADAPTIVE_CHARGING_TEMPERATURE, 0) == 1));
+        mAdaptiveChargingTemperature.setOnPreferenceChangeListener(this);
     }
 
     @Override
     public void updateState(Preference preference) {
         super.updateState(preference);
-        if (mAdaptiveCharging != null) {
-            mAdaptiveCharging.setChecked((Settings.System.getInt(mContext.getContentResolver(),
-                    Settings.System.ADAPTIVE_CHARGING, 0) == 1));
+        if (mAdaptiveChargingTemperature != null) {
+            mAdaptiveChargingTemperature.setChecked((Settings.System.getInt(mContext.getContentResolver(),
+                    Settings.System.ADAPTIVE_CHARGING_TEMPERATURE, 0) == 1));
         }
     }
 
@@ -93,7 +93,7 @@ public class AdaptiveChargingPreferenceController extends AbstractPreferenceCont
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         boolean value = (Boolean) newValue;
         Settings.System.putInt(mContext.getContentResolver(),
-                Settings.System.ADAPTIVE_CHARGING, value ? 1 : 0);
+                Settings.System.ADAPTIVE_CHARGING_TEMPERATURE, value ? 1 : 0);
         updateState(preference);
         return true;
     }
@@ -101,8 +101,8 @@ public class AdaptiveChargingPreferenceController extends AbstractPreferenceCont
     @Override
     public CharSequence getSummary() {
         boolean enabled = Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.ADAPTIVE_CHARGING, 0) == 1;
-        int resId = enabled ? R.string.adaptive_charging_summary : R.string.switch_off_text;
+                Settings.System.ADAPTIVE_CHARGING_TEMPERATURE, 0) == 1;
+        int resId = enabled ? R.string.adaptive_charging_temperature_summary : R.string.switch_off_text;
         return mContext.getResources().getText(resId);
     }
 }
