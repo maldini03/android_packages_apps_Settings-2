@@ -68,6 +68,13 @@
         <intent android:action="com.android.settings.LIVEDISPLAY_SETTINGS" />
     </Preference>
 
+    <Preference
+        android:key="color_mode"
+        android:title="@string/color_mode_title"
+        android:fragment="com.android.settings.display.ColorModePreferenceFragment"
+        settings:controller="com.android.settings.display.ColorModePreferenceController"
+        settings:keywords="@string/keywords_color_mode" />
+
     <!-- Cross-listed item, if you change this, also change it in power_usage_summary.xml -->
     <com.android.settings.display.TimeoutListPreference
         android:key="screen_timeout"
@@ -96,13 +103,6 @@
         android:widgetLayout="@null"
         settings:widgetLayout="@null"
         settings:searchable="false"/>
-
-    <Preference
-        android:key="color_mode"
-        android:title="@string/color_mode_title"
-        android:fragment="com.android.settings.display.ColorModePreferenceFragment"
-        settings:controller="com.android.settings.display.ColorModePreferenceController"
-        settings:keywords="@string/keywords_color_mode" />
 
     <SwitchPreference
         android:key="display_white_balance"
