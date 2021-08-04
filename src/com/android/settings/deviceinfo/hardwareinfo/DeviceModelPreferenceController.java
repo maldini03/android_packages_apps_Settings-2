@@ -18,7 +18,7 @@ package com.android.settings.deviceinfo.hardwareinfo;
 
 import android.content.Context;
 
-import com.android.settings.deviceinfo.HardwareInfoPreferenceController;
+import com.android.settings.deviceinfo.firmwareversion.HardwareInfoPreferenceController;
 
 public class DeviceModelPreferenceController extends HardwareInfoPreferenceController {
 

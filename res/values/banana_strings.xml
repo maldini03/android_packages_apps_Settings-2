@@ -26,6 +26,9 @@
     <string name="build_date_default">2015-01-01-0000</string>
     <string name="keywords_build_date">build date, build info</string>
 
+    <!-- About device screen, device model -->
+    <string name="device_model">Device model</string>
+
     <!-- BananaGear -->
     <string name="bananagear_title">Banana Gear</string>
     <string name="bananagear_summary">Customization tools</string>
