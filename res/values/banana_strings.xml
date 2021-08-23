@@ -529,4 +529,7 @@
     <string name="legacy_wfd_video_mode_1080p_30fps">1080p (30fps)</string>
     <string name="legacy_wfd_video_mode_1080p_60fps">1080p (60fps)</string>
 
+    <!-- Used in SetupWizard Wi-Fi network selection page [CHAR LIMIT=60] -->
+    <string name="wifi_setup_wizard_title">Select Wi\u2011Fi network</string>
+
 </resources>
