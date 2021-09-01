@@ -535,4 +535,8 @@
     <!-- Used in SetupWizard Wi-Fi network selection page [CHAR LIMIT=60] -->
     <string name="wifi_setup_wizard_title">Select Wi\u2011Fi network</string>
 
+    <!-- IME button space -->
+    <string name="navigation_bar_ime_space_title">IME button space</string>
+    <string name="navigation_bar_ime_space_summary">Show IME button space below keyboard</string>
+
 </resources>
