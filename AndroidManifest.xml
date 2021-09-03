@@ -3585,12 +3585,6 @@
         <!-- This is the longest AndroidManifest.xml ever. -->
 
         <!-- Gaming mode -->
-        <receiver android:name="com.banana.settings.helpers.GamingModeReceiver">
-            <intent-filter>
-                <action android:name="android.intent.action.GAMING_MODE_TURN_OFF" />
-                <action android:name="android.intent.action.GAMING_MODE_TURN_ON" />
-            </intent-filter>
-        </receiver>
         <activity android:name=".Settings$GamingModeActivity"
             android:label="@string/gaming_mode_title"
             android:taskAffinity="com.android.settings"
@@ -3600,7 +3594,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.banana.settings.fragments.GamingMode" />
+                android:value="com.banana.settings.fragments.GamingModeSettings" />
         </activity>
 
         <!-- Weather -->

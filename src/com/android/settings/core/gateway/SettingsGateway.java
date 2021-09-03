@@ -165,7 +165,7 @@ import com.android.settings.wifi.savedaccesspoints2.SavedAccessPointsWifiSetting
 import com.android.settings.wifi.tether.WifiTetherSettings;
 
 import com.banana.settings.BananaGear;
-import com.banana.settings.fragments.GamingMode;
+import com.banana.settings.fragments.GamingModeSettings;
 import com.banana.settings.fragments.SmartPixels;
 import com.banana.settings.fragments.OmniJawsSettings;
 import com.banana.settings.fragments.SleepMode;
@@ -323,7 +323,7 @@ public class SettingsGateway {
             BananaGear.class.getName(),
             SmartPixels.class.getName(),
             RunningServices.class.getName(),
-            GamingMode.class.getName(),
+            GamingModeSettings.class.getName(),
             OmniJawsSettings.class.getName(),
             LiveDisplaySettings.class.getName(),
             SleepMode.class.getName(),
