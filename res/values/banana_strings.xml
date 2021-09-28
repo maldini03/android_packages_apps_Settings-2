@@ -414,4 +414,8 @@
     <string name="gesture_navbar_radius_title">Pill radius</string>
     <string name="thin_label">Thin</string>
     <string name="thick_label">Thick</string>
+
+    <!-- Hide apps -->
+    <string name="hide">Hide</string>
+    <string name="unhide">Unhide</string>
 </resources>
