@@ -62,5 +62,15 @@
         android:title="@string/back_sensitivity_dialog_message"
         android:selectable="false"
         settings:searchable="false"/>
-</PreferenceScreen>
 
+    <PreferenceCategory
+        android:key="other_controls_category"
+        android:title="@string/other_controls_title">
+
+        <com.banana.support.preferences.SystemSettingSwitchPreference
+            android:key="fullscreen_gestures"
+            android:title="@string/fullscreen_gestures_title"
+            android:summary="@string/fullscreen_gestures_summary"
+            android:defaultValue="false" />
+    </PreferenceCategory>
+</PreferenceScreen>
