@@ -48,4 +48,6 @@
         <item name="android:fontFamily">@*android:string/config_headlineFontFamily</item>
     </style>
 
+    <!-- Applications fragment -->
+    <dimen name="default_margin">16dp</dimen>
 </resources>
