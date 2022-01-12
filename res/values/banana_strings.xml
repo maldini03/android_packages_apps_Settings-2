@@ -229,4 +229,8 @@
 
     <!-- Screenshot shutter -->
     <string name="screenshot_shutter_sound_title">Screenshot sound</string>
+
+    <!-- Black theme -->
+    <string name="system_black_theme_title">Pure black</string>
+    <string name="system_black_theme_summary">Pure black background for dark theme</string>
 </resources>
