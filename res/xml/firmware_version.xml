@@ -66,17 +66,6 @@
         settings:enableCopying="true"
         settings:controller="com.android.settings.deviceinfo.firmwareversion.SecurityPatchLevelPreferenceController"/>
 
-    <!-- Baseband -->
-    <Preference
-        android:key="base_band"
-        android:title="@string/baseband_version"
-        android:summary="@string/summary_placeholder"
-        android:icon="@drawable/ic_model_hardware"
-        android:selectable="false"
-        settings:layout="@layout/arc_card_about"
-        settings:enableCopying="true"
-        settings:controller="com.android.settings.deviceinfo.firmwareversion.BasebandVersionPreferenceController"/>
-
     <!-- Kernel -->
     <Preference
         android:key="kernel_version"
@@ -95,14 +84,16 @@
         settings:enableCopying="false"
         settings:controller="com.android.settings.deviceinfo.firmwareversion.SelinuxStatusPreferenceController"/>
 
-    <!-- Build -->
+    <!-- Baseband -->
     <Preference
-        android:key="os_build_date"
-        android:title="@string/build_date"
+        android:key="base_band"
+        android:title="@string/baseband_version"
         android:summary="@string/summary_placeholder"
+        android:icon="@drawable/ic_model_hardware"
         android:selectable="false"
+        settings:layout="@layout/arc_card_about"
         settings:enableCopying="true"
-        settings:controller="com.android.settings.deviceinfo.firmwareversion.BuildDatePreferenceController"/>
+        settings:controller="com.android.settings.deviceinfo.firmwareversion.BasebandVersionPreferenceController"/>
 
     <Preference
         android:key="os_build_number"
