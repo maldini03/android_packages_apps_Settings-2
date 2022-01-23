@@ -8,7 +8,11 @@
     <!-- About phone screen,  setting option name  [CHAR LIMIT=40] -->
     <string name="build_date">Build date</string>
     <string name="banana_version">BananaDroid version</string>
+    <string name="banana_device">BananaDroid Device</string>
+    <string name="version">Banana version</string>
     <string name="about_device_name">Device</string>
+    <string name="banana_release_type_title">Release type</string>
+    <string name="banana_edition_title">Edition</string>
 
     <!-- Refresh rate -->
     <string name="min_refresh_rate_title">Minimum refresh rate</string>
