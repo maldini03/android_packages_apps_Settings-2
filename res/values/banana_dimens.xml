@@ -12,4 +12,6 @@
     <dimen name="rdnt_cardview_margin_list">16dip</dimen>
     <dimen name="rdnt_pref_vert">5.5dp</dimen>
     <dimen name="rdnt_card_radius">22dp</dimen>
+
+    <dimen name="stroke_widthAboutUI">1dp</dimen>
 </resources>
