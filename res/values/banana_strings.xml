@@ -191,4 +191,10 @@
     <string name="columbus_setting_enable_switch_title">Use Quick Tap</string>
     <string name="columbus_setting_sensitivity_title">Require stronger taps</string>
     <string name="columbus_summary">%1$s / %2$s</string>
+
+    <!-- Package details -->
+    <string name="package_details_group_title">Package details</string>
+    <string name="package_name">Package name</string>
+    <string name="package_version">Package version</string>
+    <string name="package_version_text"><xliff:g id="version_num">%1$s</xliff:g></string>
 </resources>
