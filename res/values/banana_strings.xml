@@ -369,4 +369,8 @@
     <!-- FastCharge feature -->
     <string name="fast_charging_title">Fast charging</string>
     <string name="fast_charging_summary">Disable to reduce the heat produced by the device while charging or to extend the lifespan of the battery</string>
+
+    <!-- Back gesture animation -->
+    <string name="back_gesture_arrow_title">Back gesture animation</string>
+    <string name="back_gesture_arrow_summary">Show an animated arrow for back gesture</string>
 </resources>
