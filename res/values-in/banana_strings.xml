@@ -385,4 +385,10 @@
     <string name="hide_from_launcher_summary">
         Cegah aplikasi ini muncul di launcher. Membutuhkan restart launcher agar perubahan diterapkan.
     </string>
+    <!-- Navigation bar IME space -->
+    <string name="navigation_bar_ime_space_title">Ruang IME</string>
+    <string name="navigation_bar_ime_space_summary">Opsi ruang di bawah keyboard</string>
+    <string name="ime_narrow">Narrow</string>
+    <string name="ime_default">Default</string>
+    <string name="ime_hidden">Hidden</string>
 </resources>
