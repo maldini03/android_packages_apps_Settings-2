@@ -390,7 +390,9 @@
     <string name="hide_from_launcher_summary">
         Cegah aplikasi ini muncul di launcher. Membutuhkan restart launcher agar perubahan diterapkan.
     </string>
-    <!-- Narrow gestural navigation bar -->
-    <string name="gestural_navbar_narrow_title">Hilangkan ruang di bawah keyboard</string>
-    <string name="gestural_navbar_narrow_summary">Buat bilah navigasi di bawah keyboard menjadi sempit</string>
+    <!-- Navigation bar IME space -->
+    <string name="navigation_bar_ime_space_title">Ruang bawah keyboard</string>
+    <string name="navigation_bar_ime_space_value_narrow">Sempit</string>
+    <string name="default_string">Bawaan</string>
+    <string name="hidden_string">Tersembunyi</string>
 </resources>
