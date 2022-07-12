@@ -72,6 +72,12 @@
         settings:searchable="true" />
 
     <Preference
+        android:key="high_power_apps"
+        android:title="@string/high_power_apps">
+        <intent android:action="android.settings.IGNORE_BATTERY_OPTIMIZATION_SETTINGS" />
+    </Preference>
+
+    <Preference
         android:fragment="com.google.android.settings.fuelgauge.reversecharging.ReverseChargingDashboardFragment"
         android:key="reverse_charging"
         android:title="@string/reverse_charging_title"
