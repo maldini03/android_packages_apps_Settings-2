@@ -74,7 +74,7 @@
         settings:controller="com.android.settings.display.BatteryPercentagePreferenceController" />
 
     <!-- QS Battery estimates -->
-    <com.banana.support.preference.SystemSettingSwitchPreference
+    <com.banana.support.preferences.SystemSettingSwitchPreference
         android:key="qs_show_battery_estimate"
         android:title="@string/qs_show_battery_estimate_title"
         android:summaryOn="@string/qs_show_battery_estimate_summary_on"
