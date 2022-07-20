@@ -100,6 +100,7 @@
         android:key="volume_panel_on_left"
         android:title="@string/volume_panel_on_left_title"
         android:summary="@string/volume_panel_on_left_summary"
+        android:defaultValue="false"
         android:order="-138" />
 
     <!-- TODO(b/174964721): make this a PrimarySwitchPreference -->
@@ -167,7 +168,7 @@
         <com.banana.support.preferences.SystemSettingSwitchPreference
             android:key="vibrate_on_connect"
             android:title="@string/incall_vibrate_connect_title"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
         <com.banana.support.preferences.SystemSettingSwitchPreference
             android:key="vibrate_on_callwaiting"
@@ -177,7 +178,7 @@
         <com.banana.support.preferences.SystemSettingSwitchPreference
             android:key="vibrate_on_disconnect"
             android:title="@string/incall_vibrate_disconnect_title"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
         <com.banana.support.preferences.SystemSettingListPreference
             android:key="flashlight_on_call"
@@ -242,6 +243,7 @@
     <SwitchPreference
         android:key="dial_pad_tones"
         android:title="@string/dial_pad_tones_title"
+        android:defaultValue="false"
         android:order="-50"/>
 
     <!-- Screen locking sounds -->
@@ -266,6 +268,7 @@
     <SwitchPreference
         android:key="touch_sounds"
         android:title="@string/touch_sounds_title"
+        android:defaultValue="false"
         android:order="-30"/>
 
     <!-- Vibrate on touch -->
@@ -274,6 +277,7 @@
         android:title="@string/vibrate_on_touch_title"
         android:summary="@string/vibrate_on_touch_summary"
         settings:keywords="@string/keywords_vibrate_on_touch"
+        android:defaultValue="false"
         android:order="-25"/>
 
     <!-- Dock speaker plays -->
@@ -299,7 +303,8 @@
     <!-- Screenshot sound -->
     <SwitchPreference
         android:key="screenshot_shutter_sound"
-        android:title="@string/screenshot_shutter_sound_title" />
+        android:title="@string/screenshot_shutter_sound_title"
+        android:defaultValue="false" />
 
     <Preference
         android:key="sound_work_settings"

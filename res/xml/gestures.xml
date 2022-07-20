@@ -128,7 +128,7 @@
         android:key="double_tap_sleep_gesture"
         android:title="@string/double_tap_sleep_gesture_title"
         android:summary="@string/double_tap_sleep_gesture_summary"
-        android:defaultValue="false" />
+        android:defaultValue="true" />
 
     <com.banana.support.preferences.SystemSettingSwitchPreference
         android:key="double_tap_sleep_lockscreen"
