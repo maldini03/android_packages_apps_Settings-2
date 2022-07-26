@@ -15,8 +15,11 @@ Copyright (C) The 2022 dotOS Project
     android:width="200dp"
     android:height="196.58537dp"
     android:viewportWidth="410"
-    android:viewportHeight="403">
+    android:viewportHeight="403"
+    android:tint="?android:attr/colorAccent">
     <path
-        android:fillColor="@color/dot_shapeColor"
+        android:fillColor="#FF000000"
+        android:strokeAlpha="0.3"
+        android:fillAlpha="0.3"
         android:pathData="M343.5,0.5C379.95,0.5 409.5,30.05 409.5,66.5L409.5,226.5C409.5,323.7 330.7,402.5 233.5,402.5L66.5,402.5C30.05,402.5 0.5,372.95 0.5,336.5L0.5,176.5C0.5,79.3 79.3,0.5 176.5,0.5L343.5,0.5Z" />
 </vector>
