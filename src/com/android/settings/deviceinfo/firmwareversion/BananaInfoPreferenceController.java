@@ -38,6 +38,7 @@ public class BananaInfoPreferenceController extends AbstractPreferenceController
     private static final String PROP_BANANA_DEVICE = "ro.banana.device";
     private static final String PROP_BANANA_RELEASETYPE = "ro.banana.releasetype";
     private static final String PROP_BANANA_EDITION = "ro.banana.edition";
+    private static final String PROP_BANANA_MAINTAINER = "ro.banana.maintainer";
 
     public BananaInfoPreferenceController(Context context) {
         super(context);
@@ -63,16 +64,18 @@ public class BananaInfoPreferenceController extends AbstractPreferenceController
     private String getbananaReleaseType() {
         final String releaseType = SystemProperties.get(PROP_BANANA_RELEASETYPE,
                 this.mContext.getString(R.string.device_info_default));
-
-        return releaseType.substring(0, 1).toUpperCase() +
-                 releaseType.substring(1).toLowerCase();
-    }
-
-    private String getbananaEdition() {
         final String bananaEdition = SystemProperties.get(PROP_BANANA_EDITION,
                 this.mContext.getString(R.string.device_info_default));
 
-        return bananaEdition;
+        return releaseType.substring(0, 1).toUpperCase() +
+                 releaseType.substring(1).toLowerCase() + " | " + bananaEdition;
+    }
+
+    private String getbananaMaintainer() {
+        final String bananaMaintainer = SystemProperties.get(PROP_BANANA_MAINTAINER,
+                this.mContext.getString(R.string.device_info_default));
+
+        return bananaMaintainer;
     }
 
     @Override
@@ -82,15 +85,15 @@ public class BananaInfoPreferenceController extends AbstractPreferenceController
         final TextView version = (TextView) BananaInfoPreference.findViewById(R.id.version_message);
         final TextView device = (TextView) BananaInfoPreference.findViewById(R.id.device_message);
         final TextView releaseType = (TextView) BananaInfoPreference.findViewById(R.id.release_type_message);
-        final TextView edition = (TextView) BananaInfoPreference.findViewById(R.id.edition_message);
+        final TextView maintainer = (TextView) BananaInfoPreference.findViewById(R.id.maintainer_message);
         final String bananaVersion = getbananaVersion();
         final String bananaDevice = getDeviceName();
         final String bananaReleaseType = getbananaReleaseType();
-        final String bananaEdition = getbananaEdition();
+        final String bananaMaintainer = getbananaMaintainer();
         version.setText(bananaVersion);
         device.setText(bananaDevice);
         releaseType.setText(bananaReleaseType);
-        edition.setText(bananaEdition);
+        maintainer.setText(bananaMaintainer);
     }
 
     @Override

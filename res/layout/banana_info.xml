@@ -90,15 +90,15 @@
             style="@style/TextAppearance.bananaInfoSummary" />
 
         <TextView
-            android:id="@+id/edition_title"
+            android:id="@+id/maintainer_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="4dp"
-            android:text="@string/banana_edition_title"
+            android:text="@string/banana_maintainer_title"
             style="@style/TextAppearance.bananaInfoTitle" />
 
         <TextView
-            android:id="@+id/edition_message"
+            android:id="@+id/maintainer_message"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/TextAppearance.bananaInfoSummary" />
