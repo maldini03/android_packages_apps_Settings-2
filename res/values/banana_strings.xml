@@ -379,5 +379,5 @@
 
     <!-- CustomUI -->
     <string name="custom_ui_toggle_title">Use alternate settings UI</string>
-    <string name="custom_ui_toggle_summary">A reimagined custom UI (needs systemui restart)</string>
+    <string name="custom_ui_toggle_summary">A reimagined custom UI</string>
 </resources>
