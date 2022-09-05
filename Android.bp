@@ -110,6 +110,8 @@ android_library {
         "faceunlock_framework",
         "kotlinx_coroutines_android",
         "kotlinx_coroutines",
+        "android.frameworks.stats-V1-java",
+        "google-fuelgauge",
     ],
 
     libs: [
@@ -141,6 +143,18 @@ android_app {
     optimize: {
         proguard_flags_files: ["proguard.flags"],
     },
+}
+
+android_library_import {
+    name: "google-fuelgauge",
+    aars: ["libs/google-fuelgauge.aar"],
+    sdk_version: "33",
+    static_libs: [
+        "androidx-constraintlayout_constraintlayout",
+        "androidx.appcompat_appcompat",
+        "androidx.preference_preference",
+        "lottie",
+    ]
 }
 
 android_library_import {
