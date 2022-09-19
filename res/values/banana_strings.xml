@@ -95,4 +95,5 @@
     <string name="battery_illustration_description">Monitor battery health, usage and improve battery usage.</string>
     <string name="connectivity_category_title">connectivity</string>
 
+    <string name="top_level_settings_title">Settings</string>
 </resources>

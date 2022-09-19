@@ -509,8 +509,13 @@
     <!-- Card Layout OOS -->
     <dimen name="card_margin_start">16.0dp</dimen>
     <dimen name="card_margin_end">16.0dp</dimen>
+    <dimen name="card_margin_rui_start">38.0dp</dimen>
+    <dimen name="card_margin_rui_end">24.0dp</dimen>
     <dimen name="card_padding_end">70.0dp</dimen>
     <dimen name="card_height">75.0dp</dimen>
+    <dimen name="card_height_rui">75.0dp</dimen>
+    <dimen name="card_height_wave">65.0dp</dimen>
+    <dimen name="card_radius_wave">32dp</dimen>
     <dimen name="card_radius">12dp</dimen>
     <dimen name="dashboard_icon_size">42dp</dimen>
     <dimen name="top_pref_start">60dp</dimen>

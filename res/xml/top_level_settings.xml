@@ -20,9 +20,15 @@
     xmlns:settings="http://schemas.android.com/apk/res-auto"
     android:key="top_level_settings"
     android:title="Settings">
+
+    <com.android.settingslib.widget.LayoutPreference
+        android:layout="@layout/usercard"
+        android:fragment="com.android.settings.users.UserSettings"
+        android:key="top_level_usercard"
+        android:order="-170" />
         
     <com.android.settings.widget.HomepagePreference
-        android:title="test"
+        android:title="1"
         android:icon="@drawable/ic_network"
         android:key="usercard_space"
         android:selectable="false"
