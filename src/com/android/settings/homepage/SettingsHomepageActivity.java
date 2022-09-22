@@ -184,6 +184,7 @@ public class SettingsHomepageActivity extends FragmentActivity implements
         Context context = getApplicationContext();
 
         final boolean useStockLayout = getuseStockLayout();
+        final boolean messagesEnabled = getMessagesSettings();
 
         setContentView(useStockLayout  ? R.layout.settings_homepage_container_stock
                                        : R.layout.settings_homepage_container);
@@ -225,9 +226,8 @@ public class SettingsHomepageActivity extends FragmentActivity implements
           });
         }
 
-
+	if (messagesEnabled) {
 	final TextView textView = findViewById(R.id.homepage_title);
-
         switch (Calendar.getInstance().get(Calendar.HOUR_OF_DAY)) {
             case 5: case 6: case 7: case 8: case 9: case 10:
        	// Generate random welcome massage as title header
@@ -274,7 +274,11 @@ public class SettingsHomepageActivity extends FragmentActivity implements
 
             default:
                 break;
-      }
+           }
+        } else {
+           final TextView textView = findViewById(R.id.homepage_title);
+           textView.setText(getResources().getString(R.string.top_level_settings_title));
+        }
 
         setupEdgeToEdge();
         mSplitController = SplitController.getInstance();
@@ -300,12 +304,64 @@ public class SettingsHomepageActivity extends FragmentActivity implements
         final View root = findViewById(R.id.settings_homepage_container);
 	LinearLayout commonCon = root.findViewById(R.id.common_con);
         final Toolbar toolbar = root.findViewById(R.id.search_action_bar);
-	collapsing_toolbar =  root.findViewById(R.id.collapsing_toolbar);
 
         FeatureFactory.getFactory(this).getSearchFeatureProvider()
                 .initSearchToolbar(this /* activity */, toolbar, SettingsEnums.SETTINGS_HOMEPAGE);
 
-        collapsing_toolbar.setTitle(getResources().getString(R.string.top_level_settings_title));
+	if (messagesEnabled) {
+	collapsing_toolbar =  root.findViewById(R.id.collapsing_toolbar);
+        switch (Calendar.getInstance().get(Calendar.HOUR_OF_DAY)) {
+            case 5: case 6: case 7: case 8: case 9: case 10:
+       	// Generate random welcome massage as title header
+        	String[] morningMsg = getResources().getStringArray(R.array.dashboard_morning);
+        	Random genMorningMsg = new Random();
+        	int morning = genMorningMsg.nextInt(morningMsg.length-1);
+        	collapsing_toolbar.setTitle(morningMsg[morning]);
+                break;
+
+            case 18: case 19: case 20: 
+        	String[] msgearlyNight = getResources().getStringArray(R.array.dashboard_early_night);
+        	Random genmsgeNight = new Random();
+        	int eNight = genmsgeNight.nextInt(msgearlyNight.length-1);
+        	collapsing_toolbar.setTitle(msgearlyNight[eNight]);
+                break;
+                
+            case 21: case 22: case 23: case 0: 
+        	String[] msgNight = getResources().getStringArray(R.array.dashboard_night);
+        	Random genmsgNight = new Random();
+        	int night = genmsgNight.nextInt(msgNight.length-1);
+        	collapsing_toolbar.setTitle(msgNight[night]);
+                break;
+
+             case 16: case 17:
+        	String[] msgNoon = getResources().getStringArray(R.array.dashboard_noon);
+        	Random genmsgNoon = new Random();
+        	int noon = genmsgNoon.nextInt(msgNoon.length-1);
+        	collapsing_toolbar.setTitle(msgNoon[noon]);
+                break;
+
+            case 1: case 2: case 3: case 4:
+        	String[] msgMN = getResources().getStringArray(R.array.dashboard_midnight);
+        	Random genmsgMN = new Random();
+        	int mn = genmsgMN.nextInt(msgMN.length-1);
+        	collapsing_toolbar.setTitle(msgMN[mn]);
+                break;
+                
+            case 11: case 12: case 13: case 14: case 15:
+        	String[] msgRD = getResources().getStringArray(R.array.dashboard_random);
+        	Random genmsgRD = new Random();
+        	int randomm = genmsgRD.nextInt(msgRD.length-1);
+        	collapsing_toolbar.setTitle(msgRD[randomm]);
+                break;
+
+            default:
+                break;
+           }
+        } else {
+           collapsing_toolbar =  root.findViewById(R.id.collapsing_toolbar);
+           collapsing_toolbar.setTitle(getResources().getString(R.string.top_level_settings_title));
+        }
+        
         }
         getLifecycle().addObserver(new HideNonSystemOverlayMixin(this));
         mCategoryMixin = new CategoryMixin(this);
@@ -685,6 +741,13 @@ public class SettingsHomepageActivity extends FragmentActivity implements
         final Context context = getApplicationContext();
         return Settings.System.getIntForUser(context.getContentResolver(),
                 Settings.System.USE_STOCK_LAYOUT, 0,
+                UserHandle.USER_CURRENT) != 0;
+   }
+   
+    private boolean getMessagesSettings() {
+        final Context context = getApplicationContext();
+        return Settings.System.getIntForUser(context.getContentResolver(),
+                Settings.System.SETTINGS_HOMEPAGE_MESSAGES, 0,
                 UserHandle.USER_CURRENT) != 0;
    }
 }
