@@ -6,7 +6,7 @@
     android:layout_marginStart="@dimen/card_margin_start"
     android:layout_marginEnd="@dimen/card_margin_end"
     android:layout_marginBottom="20dp"
-    android:background="@drawable/wave_preference_background_bottom"
+    android:background="@drawable/mt_preference_background_bottom"
     android:paddingStart="18dp">
 
     <ImageView
@@ -22,7 +22,7 @@
         android:padding="1.5dp" 
         android:layout_width="@dimen/dashboard_icon_size"
         android:layout_height="@dimen/dashboard_icon_size"
-        android:src="@drawable/ic_homepage_google_settings"
+        android:src="@drawable/ic_homepage_google_settings_rui"
         app:layout_constraintHeight_max="@dimen/op_control_avatar_size3"
         app:layout_constraintWidth_max="@dimen/op_control_avatar_size3"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -42,6 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/op_control_text_color_primary"
+            android:paddingTop="5dp"
             android:singleLine="true"
             style="@style/op_control_text_style_h6"
             android:textSize="16sp" />
@@ -65,8 +66,8 @@
             app:cardCornerRadius="99dp">
         
                 <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:layout_gravity="center"
                     android:src="@drawable/ic_arrow"
                     android:tint="?android:attr/textColorPrimary" />    
