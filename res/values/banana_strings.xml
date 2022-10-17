@@ -278,4 +278,8 @@
     <string name="package_name">Package name</string>
     <string name="package_version">Package version</string>
     <string name="package_version_text"><xliff:g id="version_num">%1$s</xliff:g></string>
+
+    <!-- Captive portal -->
+    <string name="captive_portal_title">Connectivity check</string>
+    <string name="captive_portal_summary">Determine if the device can connect to the internet, by contacting Google. Also used to detect captive portals.</string>
 </resources>
