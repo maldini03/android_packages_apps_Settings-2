@@ -63,8 +63,8 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexableRaw;
 import com.android.settingslib.widget.LayoutPreference;
 
-import com.banana.support.preferencess.CustomDialogPreference;
-import com.banana.support.preference.SystemSettingSwitchPreference;
+import com.banana.support.preferences.CustomDialogPreference;
+import com.banana.support.preferences.SystemSettingSwitchPreference;
 
 import java.util.ArrayList;
 import java.util.Arrays;
