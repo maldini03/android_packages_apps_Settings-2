@@ -38,17 +38,6 @@
 		android:textColor="@color/op_control_text_color_primary"
 		style="@style/op_control_text_style_h6"
 		android:singleLine="true"/>
-
-            <TextView
-                android:id="@android:id/summary"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:singleLine="true"
-                android:textSize="13sp"
-                android:text="@string/usercard_summary"
-                android:textColor="@color/op_control_text_color_secondary"
-                style="@style/op_control_text_style_body1"/>
         </LinearLayout>
     </LinearLayout>
 </FrameLayout>
