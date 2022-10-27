@@ -115,7 +115,6 @@ public class FingerprintEnrollEnrolling extends BiometricsEnrollEnrolling {
 
     private FingerprintManager mFingerprintManager;
     private boolean mCanAssumeUdfps;
-    private static boolean sCanAssumeSidefps;
     @Nullable private ProgressBar mProgressBar;
     private ObjectAnimator mProgressAnim;
     private TextView mDescriptionText;
@@ -158,7 +157,6 @@ public class FingerprintEnrollEnrolling extends BiometricsEnrollEnrolling {
         final List<FingerprintSensorPropertiesInternal> props =
                 mFingerprintManager.getSensorPropertiesInternal();
         mCanAssumeUdfps = props.size() == 1 && props.get(0).isAnyUdfpsType();
-        sCanAssumeSidefps = props.size() == 1 && props.get(0).isAnySidefpsType();
 
         mAccessibilityManager = getSystemService(AccessibilityManager.class);
         mIsAccessibilityEnabled = mAccessibilityManager.isEnabled();
@@ -741,16 +739,9 @@ public class FingerprintEnrollEnrolling extends BiometricsEnrollEnrolling {
 
         @Override
         public Dialog onCreateDialog(Bundle savedInstanceState) {
-            final boolean isFrontFacingFps = getResources().getBoolean(
-                    R.bool.config_is_front_facing_fps);
-            final String fpsLocation = getString(sCanAssumeSidefps
-                    ? R.string.fingerprint_enroll_touch_dialog_message_side : isFrontFacingFps
-                            ? R.string.fingerprint_enroll_touch_dialog_message_front
-                            : R.string.fingerprint_enroll_touch_dialog_message_rear);
-
             AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
             builder.setTitle(R.string.security_settings_fingerprint_enroll_touch_dialog_title)
-                    .setMessage(fpsLocation)
+                    .setMessage(R.string.security_settings_fingerprint_enroll_touch_dialog_message)
                     .setPositiveButton(R.string.security_settings_fingerprint_enroll_dialog_ok,
                             new DialogInterface.OnClickListener() {
                                 @Override
