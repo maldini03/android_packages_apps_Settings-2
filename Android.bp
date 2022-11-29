@@ -51,10 +51,8 @@ android_library {
            "BananaGear/src/**/*.kt",
     ],
 
-    resource_dirs: [
-        "res",
-        "BananaGear/res",
-        "TouchGestures/res",
+    resource_dirs: ["res",
+                   "BananaGear/res",
     ],
 
     aaptflags: ["--extra-packages com.banana.settings"],
