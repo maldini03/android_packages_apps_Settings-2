@@ -4610,6 +4610,12 @@
             <meta-data android:name="com.android.settings.summary"
                 android:resource="@string/bananagear_summary"/>
         </activity>
+        <!-- BananaDroid Team dialog -->
+        <activity android:name="com.banana.settings.fragments.team.TeamActivity"
+                  android:taskAffinity=""
+                  android:parentActivityName="Settings"
+                  android:theme="@style/TeamDialog"
+                  android:label="@string/dialog_team_title" />
         <!-- Provide direct entry into Dev settings - Running Services -->
         <activity android:name="Settings$DevRunningServicesActivity"
                 android:label="@string/runningservices_settings_title"
