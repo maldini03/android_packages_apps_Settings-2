@@ -488,4 +488,8 @@
     <string name="gesture_navbar_radius_title">Pill radius</string>
     <string name="thin_label">Thin</string>
     <string name="thick_label">Thick</string>
+
+    <!-- Media player settings -->
+    <string name="media_controls_always_show_time_title">Always show time</string>
+    <string name="media_controls_always_show_time_summary">Always show passed and total time on media player</string>
 </resources>
