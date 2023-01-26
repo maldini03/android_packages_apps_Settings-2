@@ -52,4 +52,7 @@
 
     <!-- Smart Charging -->
     <bool name="config_supportSmartCharging">false</bool>
+
+    <!-- Whether to show TouchGestures preference -->
+    <bool name="config_supportsTouchGestures">false</bool>
 </resources>
