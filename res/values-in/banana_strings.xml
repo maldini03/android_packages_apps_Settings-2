@@ -391,4 +391,56 @@
     <string name="ime_narrow">Narrow</string>
     <string name="ime_default">Default</string>
     <string name="ime_hidden">Hidden</string>
+    <!-- Smart Pause -->
+    <string name="adaptive_playback_screen_title">Penjedaan Pintar</string>
+    <string name="adaptive_playback_enabled">Gunakan penjedaan pintar</string>
+    <string name="adaptive_playback_disabled_summary">Mati</string>
+    <string name="adaptive_playback_intro_text">Menjedakan media secara otomatis ketika nada dering diam dan akan dilanjukan kembali secara otomatis ketika nada dering dikembalikan dengan jangka waktu yang telah diatur.</string>
+    <string name="adaptive_playback_timeout_title">Gunakan jangka waktu</string>
+    <string name="adaptive_playback_timeout_none">Tanpa jangka waktu</string>
+    <string name="adaptive_playback_timeout_none_summary">Aktif (tanpa jangka waktu)</string>
+    <string name="adaptive_playback_timeout_30_secs">30 detik</string>
+    <string name="adaptive_playback_timeout_30_secs_summary">Aktif (30 detik)</string>
+    <string name="adaptive_playback_timeout_1_min">1 menit</string>
+    <string name="adaptive_playback_timeout_1_min_summary">Aktif (1 menit)</string>
+    <string name="adaptive_playback_timeout_2_min">2 menits</string>
+    <string name="adaptive_playback_timeout_2_min_summary">Aktif (2 menit)</string>
+    <string name="adaptive_playback_timeout_5_min">5 menit</string>
+    <string name="adaptive_playback_timeout_5_min_summary">Aktif (5 menit)</string>
+    <string name="adaptive_playback_timeout_10_min">10 menit</string>
+    <string name="adaptive_playback_timeout_10_min_summary">Aktif (10 menit)</string>
+
+    <!-- Preference and settings suggestion title text for screen off UDFPS (phone) [CHAR LIMIT=60]-->
+    <string name="ambient_display_screen_off_udfps_title" product="default">Tekan lama pada sensor sidik jari untuk membuka kunci ponsel</string>
+    <!-- Preference and settings suggestion title text for screen off UDFPS  (tablet) [CHAR LIMIT=60]-->
+    <string name="ambient_display_screen_off_udfps_title" product="tablet">Tekan lama pada sensor sidik jari untuk membuka kunci tablet</string>
+    <!-- Preference and settings suggestion title text for screen off UDFPS  (device) [CHAR LIMIT=60]-->
+    <string name="ambient_display_screen_off_udfps_title" product="device">Tekan lama pada sensor sidik jari untuk membuka kunci perangkat</string>
+    <!-- Summary text for screen off UDFPS [CHAR LIMIT=NONE]-->
+    <string name="ambient_display_screen_off_udfps_summary">Untuk membangunkan layar dan membuka kunci, tekan lama pada sensor sidik jari bawah layar.</string>
+
+    <!-- Gesture navbar radius -->
+    <string name="gesture_navbar_radius_title">Radius pil</string>
+    <string name="thin_label">Tipis</string>
+    <string name="thick_label">Tebal</string>
+
+    <!-- Media player settings -->
+    <string name="media_controls_always_show_time_title">Selalu tampilkan waktu</string>
+    <string name="media_controls_always_show_time_summary">Selalu tampilkan waktu yang terlewati dan total waktu pada pemutar media</string>
+    <string name="media_controls_squiggle_title">Progres berlekuk</string>
+    <string name="media_controls_squiggle_summary">Tampilkan bilah progres yang berlekuk, mengganggu, tidak berguna, dan tampak seperti pada pemutar media\nMulai ulang SystemUI untuk mendapatkan efek ini</string>
+
+    <!-- Hide apps -->
+    <string name="hide">Sembunyikan</string>
+    <string name="unhide">Perlihatkan</string>
+
+    <!-- Smart charging -->
+    <string name="smart_charging_title">Pengisian daya pintar</string>
+    <string name="smart_charging_summary">Atur level pengisian daya maksimum</string>
+    <string name="smart_charging_switch_title">Gunakan pengisian daya pintar</string>
+    <string name="smart_charging_level_title">Level pemicu akhir/henti</string>
+    <string name="smart_charging_resume_level_title">Level pemicu awal/mulai</string>
+    <string name="smart_charging_reset_stats_title">Atur ulang statistik baterai</string>
+    <string name="smart_charging_reset_stats_summary">Atur ulang statistik baterai setelah mencapai level pengisian daya yang ditentukan</string>
+    <string name="smart_charging_footer">Pengisian daya pintar memungkinkan Anda mengatur level pengisian daya maksimum untuk memperpanjang umur baterai</string>
 </resources>
