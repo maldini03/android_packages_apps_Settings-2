@@ -443,4 +443,44 @@
     <string name="smart_charging_reset_stats_title">Atur ulang statistik baterai</string>
     <string name="smart_charging_reset_stats_summary">Atur ulang statistik baterai setelah mencapai level pengisian daya yang ditentukan</string>
     <string name="smart_charging_footer">Pengisian daya pintar memungkinkan Anda mengatur level pengisian daya maksimum untuk memperpanjang umur baterai</string>
+
+    <!-- Screen resolution -->
+    <string name="custom_screen_resolution_title">Resolusi layar secara kustom</string>
+
+    <!-- Display settings screen, color balance category title [CHAR LIMIT=30] -->
+    <string name="color_mode_balance_category">Keseimbangan warna</string>
+
+    <!-- Display settings screen, red color balance setting slider [CHAR LIMIT=NONE] -->
+    <string name="color_mode_balance_red">Kekuatan merah</string>
+
+    <!-- Display settings screen, green color balance setting slider [CHAR LIMIT=NONE] -->
+    <string name="color_mode_balance_green">Kekuatan hijau</string>
+
+    <!-- Display settings screen, blue color balance setting slider [CHAR LIMIT=NONE] -->
+    <string name="color_mode_balance_blue">Kekuatan biru</string>
+    <string name="keywords_color_balance">warna, keseimbangan warna, koreksi warna, merah, hijau, biru, LiveDisplay</string>
+
+    <!-- USB configuration -->
+    <string name="usb_default_config_title">Pengaturan USB</string>
+    <string name="usb_default_config_summary">Pilih aksi bawaan ketika perangkat dihubungkan ke USB</string>
+
+    <!-- VPN app management screen, global VPN -->
+    <string name="global_vpn_title">VPN Global</string>
+    <string name="global_vpn_summary">Paksa semua lalu lintas pada perangkat melalui VPN ini, termasuk profile kerja dan pengguna lainnya.</string>
+    <string name="global_vpn_summary_on">Paksa semua lalu lintas pada perangkat melalui VPN ini, termasuk profil kerja dan pengguna lainnya. Catatan: Ketika aktif, Anda tidak akan dapat menggunakan VPN terpisah pada profil kerja atau pengguna lainnya</string>
+    <string name="global_vpn_summary_any_vpn_active">Anda perlu untuk menonaktifkan semua koneksi VPN yang aktif terlebih dahulu untuk mengaktifkan ini</string>
+
+    <!-- Developer Options -->
+    <string name="cleartext_network_policy_title">Batasi lalu lintas jaringan cleartext</string>
+    <string name="cleartext_network_policy_summary">Blokir semua lalu lintas jaringan. Membutuhkan pengaturan Private DNS. Catata: Tanpa pengecualian eksplisit, aplikasi yang menggunakan lalu lintas cleartext tidak akan bekerja</string>
+
+    <!-- Title of preference to disallow installing apps [CHAR LIMIT=45] -->
+    <string name="user_disallow_install_apps">Larang menginstal aplikasi</string>
+    <!-- Title of preference to disallow installing apps [CHAR LIMIT=45] -->
+    <string name="user_disallow_install_apps_unknown_sources">Melarang untuk menginstal aplikasi dari sumber pihak ketiga</string>
+
+    <!-- Checkbox label that restricts network internet access of a specific application. [CHAR LIMIT=40] -->
+    <string name="data_usage_app_restrict_background_all">Akses jaringan latar belakang</string>
+    <!-- Summary message for checkbox that restricts background network access of a specific application. [CHAR LIMIT=NONE] -->
+    <string name="data_usage_app_restrict_background_all_summary">Aktifkan penggunaan jaringan pada latar belakang</string>
 </resources>
