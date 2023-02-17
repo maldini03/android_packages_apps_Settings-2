@@ -70,6 +70,10 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     private static final String KEY_APP_SWITCH_LONG_PRESS = "hardware_keys_app_switch_long_press";
     private static final String DISABLE_NAV_KEYS = "disable_nav_keys";
     private static final String KEY_SWAP_CAPACITIVE_KEYS = "swap_capacitive_keys";
+    private static final String KEY_NAVIGATION_BACK_LONG_PRESS = "navigation_back_long_press";
+    private static final String KEY_NAVIGATION_HOME_LONG_PRESS = "navigation_home_long_press";
+    private static final String KEY_NAVIGATION_HOME_DOUBLE_TAP = "navigation_home_double_tap";
+    private static final String KEY_NAVIGATION_APP_SWITCH_LONG_PRESS = "navigation_app_switch_long_press";
 
     private static final String CATEGORY_HOME = "home_key";
     private static final String CATEGORY_BACK = "back_key";
@@ -78,6 +82,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     private static final String CATEGORY_APPSWITCH = "app_switch_key";
     private static final String CATEGORY_CAMERA = "camera_key";
     private static final String CATEGORY_BACKLIGHT = "key_backlight";
+    private static final String CATEGORY_NAVBAR = "navigation_bar_category";
 
     private ListPreference mBackLongPressAction;
     private ListPreference mHomeLongPressAction;
@@ -88,11 +93,17 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     private ListPreference mAssistLongPressAction;
     private ListPreference mAppSwitchPressAction;
     private ListPreference mAppSwitchLongPressAction;
+    private ListPreference mNavigationBackLongPressAction;
+    private ListPreference mNavigationHomeLongPressAction;
+    private ListPreference mNavigationHomeDoubleTapAction;
+    private ListPreference mNavigationAppSwitchLongPressAction;
     private SwitchPreference mCameraWakeScreen;
     private SwitchPreference mCameraSleepOnRelease;
     private SwitchPreference mCameraLaunch;
     private SwitchPreference mDisableNavigationKeys;
     private SwitchPreference mSwapCapacitiveKeys;
+
+    private PreferenceCategory mNavigationPreferencesCat;
 
     private Handler mHandler;
 
@@ -144,6 +155,8 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
             mSwapCapacitiveKeys = null;
         }
 
+        mNavigationPreferencesCat = findPreference(CATEGORY_NAVBAR);
+
         Action defaultBackLongPressAction = Action.fromIntSafe(res.getInteger(
                 com.android.internal.R.integer.config_longPressOnBackBehavior));
         Action defaultHomeLongPressAction = Action.fromIntSafe(res.getInteger(
@@ -170,6 +183,22 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         Action appSwitchLongPressAction = Action.fromSettings(resolver,
                 Settings.System.KEY_APP_SWITCH_LONG_PRESS_ACTION,
                 defaultAppSwitchLongPressAction);
+
+        // Navigation bar back long press
+        mNavigationBackLongPressAction = initList(KEY_NAVIGATION_BACK_LONG_PRESS,
+                backLongPressAction);
+
+        // Navigation bar home long press
+        mNavigationHomeLongPressAction = initList(KEY_NAVIGATION_HOME_LONG_PRESS,
+                homeLongPressAction);
+
+        // Navigation bar home double tap
+        mNavigationHomeDoubleTapAction = initList(KEY_NAVIGATION_HOME_DOUBLE_TAP,
+                homeDoubleTapAction);
+
+        // Navigation bar app switch long press
+        mNavigationAppSwitchLongPressAction = initList(KEY_NAVIGATION_APP_SWITCH_LONG_PRESS,
+                appSwitchLongPressAction);
 
         // Only visible on devices that does not have a navigation bar already
         if (NavbarUtils.canDisable(getActivity())) {
@@ -338,15 +367,15 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mBackLongPressAction) {
+        if (preference == mBackLongPressAction || preference == mNavigationBackLongPressAction) {
             handleListChange((ListPreference) preference, newValue,
                     Settings.System.KEY_BACK_LONG_PRESS_ACTION);
             return true;
-        }else if (preference == mHomeLongPressAction) {
+        } else if (preference == mHomeLongPressAction || preference == mNavigationHomeLongPressAction) {
             handleListChange((ListPreference) preference, newValue,
                     Settings.System.KEY_HOME_LONG_PRESS_ACTION);
             return true;
-        } else if (preference == mHomeDoubleTapAction) {
+        } else if (preference == mHomeDoubleTapAction || preference == mNavigationHomeDoubleTapAction) {
             handleListChange((ListPreference) preference, newValue,
                     Settings.System.KEY_HOME_DOUBLE_TAP_ACTION);
             return true;
@@ -370,7 +399,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
             handleListChange(mAppSwitchPressAction, newValue,
                     Settings.System.KEY_APP_SWITCH_ACTION);
             return true;
-        } else if (preference == mAppSwitchLongPressAction) {
+        } else if (preference == mAppSwitchLongPressAction || preference == mNavigationAppSwitchLongPressAction) {
             handleListChange((ListPreference) preference, newValue,
                     Settings.System.KEY_APP_SWITCH_LONG_PRESS_ACTION);
             return true;
@@ -404,6 +433,16 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
             backlight.updateSummary();
         }
 
+        /* Toggle hardkey control availability depending on navbar state */
+        if (mNavigationPreferencesCat != null) {
+            if (navbarEnabled) {
+                mNavigationPreferencesCat.addPreference(mNavigationBackLongPressAction);
+                mNavigationPreferencesCat.addPreference(mNavigationHomeLongPressAction);
+                mNavigationPreferencesCat.addPreference(mNavigationHomeDoubleTapAction);
+                mNavigationPreferencesCat.addPreference(mNavigationAppSwitchLongPressAction);
+            }
+        }
+
         if (backCategory != null) {
             if (mBackLongPressAction != null) {
                 mBackLongPressAction.setEnabled(!navbarEnabled);
@@ -433,6 +472,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     public boolean onPreferenceTreeClick(Preference preference) {
         if (preference == mDisableNavigationKeys) {
             mDisableNavigationKeys.setEnabled(false);
+            mNavigationPreferencesCat.setEnabled(false);
             writeDisableNavkeysOption(mDisableNavigationKeys.isChecked());
             updateDisableNavkeysOption();
             updateDisableNavkeysCategories(true);
@@ -441,6 +481,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
                 public void run() {
                     try {
                         mDisableNavigationKeys.setEnabled(true);
+                        mNavigationPreferencesCat.setEnabled(mDisableNavigationKeys.isChecked());
                         updateDisableNavkeysCategories(mDisableNavigationKeys.isChecked());
                     }catch(Exception e){
                     }
