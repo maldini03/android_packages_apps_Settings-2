@@ -473,9 +473,6 @@
     <string name="always_on_display_schedule_mixed_sunset">Turns on from sunset till a time</string>
     <string name="always_on_display_schedule_mixed_sunrise">Turns on from a time till sunrise</string>
 
-    <!-- Volume link notification -->
-    <string name="volume_link_notification_title">Link ring &amp; notification volumes</string>
-
     <!-- Floating rotation button -->
     <string name="enable_floating_rotation_button_title">Use floating rotate button</string>
 
